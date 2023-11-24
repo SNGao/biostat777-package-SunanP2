@@ -19,7 +19,7 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
 }
 
 # Install MyPackage from GitHub
-devtools::install_github("YourGitHubUsername/MyPackage")
+devtools::install_github("https://github.com/SNGao/biostat777-package-SunanP2")
 ```
 
 ### Exported Functions
