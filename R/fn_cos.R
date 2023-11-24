@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' fn_cos(c(1:10), 5)
+#' fn_cos(1, 10)
 #'
 
 fn_cos <- function(x, k=1) {

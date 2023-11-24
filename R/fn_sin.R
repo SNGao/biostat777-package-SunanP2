@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' fn_sin(c(1:10), 5)
+#' fn_sin(1, 10)
 #'
 
 fn_sin <- function(x, k=1) {
