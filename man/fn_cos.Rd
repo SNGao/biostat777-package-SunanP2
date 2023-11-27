@@ -25,6 +25,6 @@ If the input data contains NaN value, the function will print warning to remind.
 If the input data contains Non-numeric value, the function will print warning to remind.
 }
 \examples{
-fn_cos(c(1:10), 5)
+fn_cos(1, 10)
 
 }

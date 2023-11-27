@@ -2,6 +2,7 @@
 
 S3method(calculate_CI,ci_class)
 S3method(calculate_CI,numeric)
+S3method(print,ci_class)
 export(calculate_CI)
 export(fn_cos)
 export(fn_sin)

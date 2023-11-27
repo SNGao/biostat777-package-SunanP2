@@ -18,7 +18,7 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools")
 }
 
-# Install MyPackage from GitHub
+# Install SunanP2 from GitHub
 devtools::install_github("https://github.com/SNGao/biostat777-package-SunanP2")
 ```
 
@@ -30,10 +30,10 @@ devtools::install_github("https://github.com/SNGao/biostat777-package-SunanP2")
 - Example:
 ``` r
 library(SunanP2)
-fn_sin(45, 20)
+fn_sin(1, 10)
 
 ## compare the difference ratio between sin() function.
-diff = (fn_sin(45, 20) - sin(45))/sin(45)
+diff = (fn_sin(1, 10) - sin(1))/sin(1)
 print(diff)
 ```
 
@@ -43,10 +43,10 @@ print(diff)
 - Example:
 ``` r
 library(SunanP2)
-fn_cos(45, 20)
+fn_cos(1, 10)
 
 ## compare the difference ratio between cos() function.
-diff = (fn_cos(45, 20) - cos(45))/cos(45)
+diff = (fn_cos(1, 10) - cos(1))/cos(1)
 print(diff)
 ```
 

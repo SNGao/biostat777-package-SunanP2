@@ -22,10 +22,19 @@ This function calculates the confidence intervals of a sample mean and returns a
 
 If the input data contains NaN value, the function will print warning to remind.
 
-If the input data contains Non-numeric value, the function will print warning to remind.
+If the input is empty, the function will print warning to remind
+
+If the input doesn't belong to numeric or ci_class class, the function will print warning to remind.
+
+If the 1-α lower than 0 or larger than 1, the function will print warning to remind.
 }
 \examples{
 calculate_CI(c(1:10), 0.95)
-calculate_CI(c(1:10, NaN), 0.95)
 calculate_CI(c(1:10, 'String'), 0.95)
+
+library(SunanP2)
+set.seed(1234)
+x <- rnorm(100)
+obj <- make_ci_class(x)
+output = calculate_CI(obj, 0.95)
 }

@@ -34,6 +34,8 @@ make_ci_class<- function(x, conf = 0.95) {
   structure(list(data = x, conf = conf), class = "ci_class")
 }
 
+#' @export
+#' @method print ci_class
 print.ci_class <- function(x) {
   cat("ci_class object with", length(x$data), "observations.\n")
   invisible(x)

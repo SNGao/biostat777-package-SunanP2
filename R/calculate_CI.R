@@ -4,7 +4,9 @@
 #'
 #' @details This function calculates the confidence intervals of a sample mean and returns a named vector of length 2, where the first value is the lower_bound, the second value is the upper_bound.
 #' @details If the input data contains NaN value, the function will print warning to remind.
-#' @details If the input data contains Non-numeric value, the function will print warning to remind.
+#' @details If the input is empty, the function will print warning to remind
+#' @details If the input doesn't belong to numeric or ci_class class, the function will print warning to remind.
+#' @details If the 1-α lower than 0 or larger than 1, the function will print warning to remind.
 #'
 #' @param x the input data vector with the length of N
 #' @param conf the \code{1-α} confidence interval
@@ -15,8 +17,13 @@
 #'
 #' @examples
 #' calculate_CI(c(1:10), 0.95)
-#' calculate_CI(c(1:10, NaN), 0.95)
 #' calculate_CI(c(1:10, 'String'), 0.95)
+#'
+#' library(SunanP2)
+#' set.seed(1234)
+#' x <- rnorm(100)
+#' obj <- make_ci_class(x)
+#' output = calculate_CI(obj, 0.95)
 
 
 calculate_CI <- function(obj, ...) {
@@ -30,6 +37,13 @@ calculate_CI <- function(obj, ...) {
 #' @method calculate_CI numeric
 calculate_CI.numeric <- function(x, conf=0.95) {
   # Calculate confidence interval using your desired method
+  if (conf <= 0 | conf >= 1) {
+    stop("Confidence level must be between 0 and 1.")
+  }
+  if (sum(is.na(x))>=1){
+    stop('Warning: null value in the input data, please check')
+  }
+
   mean_val <- sample_mean(x)
   sd_val <- sample_sd(x)
   n_obs <- length(x)
@@ -44,9 +58,16 @@ calculate_CI.numeric <- function(x, conf=0.95) {
 #' @export
 #' @method calculate_CI ci_class
 calculate_CI.ci_class <- function(obj, conf=0.95) {
+  if (conf <= 0 | conf >= 1) {
+    stop("Confidence level must be between 0 and 1.")
+  }
+  if (sum(is.na(obj))>=1){
+    stop('Warning: null value in the input data, please check')
+  }
+
   mean_val <- sample_mean(obj$data)
   se <- sample_sd(obj$data) / sqrt(length(obj$data))
-  margin <- qnorm((1 + 0.95) / 2) * se
+  margin <- qnorm((1 + conf) / 2) * se
 
   lower_bound <- mean_val - margin
   upper_bound <- mean_val + margin
