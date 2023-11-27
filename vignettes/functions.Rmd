@@ -48,15 +48,15 @@ for (i in c(1:dim(lines_data)[1])){
 ```
 
 ### Plot the graph using ggplot2 (fn_cos)
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.width=6, fig.height=4}
 library(ggplot2)
 ggplot() +
   geom_line(data = lines_data, aes(x = x, y = y, color = as.factor(k)), size = 1) +
   geom_point(data = points_data, aes(x = x, y = y), shape = 1, size = 1) +
   #scale_color_manual(values = c("blue", "red", "green", "orange", "purple")) +
   labs(title = "Cosine Function and Scaled Cosine Functions",
-       x = "X-axis",
-       y = "Y-axis") +
+       x = "X",
+       y = "Y: f(x)") +
   theme_minimal()
 
 ggplot() +
@@ -64,8 +64,8 @@ ggplot() +
   geom_point(data = points_data, aes(x = x, y = y), shape = 1, size = 1) +
   #scale_color_manual(values = c("blue", "red", "green", "orange", "purple")) +
   labs(title = "Cosine Function and Scaled Cosine Functions",
-       x = "X-axis",
-       y = "Y-axis") +
+       x = "X",
+       y = "Y: f(x)") +
   ylim(-2,2)+
   theme_minimal()
 ```
@@ -88,14 +88,14 @@ for (i in c(1:dim(lines_data)[1])){
 ```
 
 ### Plot the graph using ggplot2 (fn_sin)
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.width=6, fig.height=4}
 ggplot() +
   geom_line(data = lines_data, aes(x = x, y = y, color = as.factor(k)), size = 1) +
   geom_point(data = points_data, aes(x = x, y = y), shape = 1, size = 1) +
   #scale_color_manual(values = c("blue", "red", "green", "orange", "purple")) +
   labs(title = "Cosine Function and Scaled Cosine Functions",
-       x = "X-axis",
-       y = "Y-axis") +
+       x = "X",
+       y = "Y: f(x)") +
   theme_minimal()
 
 ggplot() +
@@ -103,8 +103,8 @@ ggplot() +
   geom_point(data = points_data, aes(x = x, y = y), shape = 1, size = 1) +
   #scale_color_manual(values = c("blue", "red", "green", "orange", "purple")) +
   labs(title = "Cosine Function and Scaled Cosine Functions",
-       x = "X-axis",
-       y = "Y-axis") +
+       x = "X",
+       y = "Y: f(x)") +
   ylim(-2,2)+
   theme_minimal()
 ```
@@ -199,7 +199,7 @@ penguins_combined <- left_join(penguins, penguins_summary[c('ID', 'mean_mass', '
 ```
 
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.width=6, fig.height=4}
 penguins_combined %>% 
   ggplot(aes(x = bill_length_mm, y = body_mass_g)) + 
   geom_point(aes(x = bill_length_mm, y = body_mass_g),  linetype = "solid", color = rainbow(333), size = 1) + 
@@ -212,7 +212,7 @@ penguins_combined %>%
 ```
 
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.width=6, fig.height=4}
 plot_flipper_length_distribution <- function(ID, year) {
   if (!any(penguins_combined$ID == ID & penguins_combined$year == year)) {
     stop("There is no combination of city_name and year, plot doesn't exist.")
@@ -240,7 +240,7 @@ plot_flipper_length_distribution <- function(ID, year) {
 plot_flipper_length_distribution(ID = "Adelie-Torgersen", year = 2007)
 ```
 
-```{r, warning=FALSE}
+```{r, warning=FALSE, fig.width=6, fig.height=4}
 library(ggplot2)
 
 body_mass_plot <- ggplot(penguins_summary2, aes(x = as.numeric(year), y = as.numeric(mean_mass))) +
