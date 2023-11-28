@@ -127,6 +127,17 @@ In this part, we will use the demo data from ***TidyTuesday*** package to delive
 
 ### Load the data into R
 Download example data from github and save them in the local site.
+```{r}
+if (!require("tidyverse", quietly = TRUE)) {
+    install.packages("tidyverse")
+}
+
+if (!require("tidytuesdayR", quietly = TRUE)) {
+    install.packages("tidytuesdayR")
+}
+```
+
+
 ```{r, warning=FALSE}
 library(tidytuesdayR)
 library(here)
