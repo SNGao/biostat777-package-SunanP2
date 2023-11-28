@@ -65,5 +65,18 @@ library(SunanP2)
 set.seed(1234)
 x <- rnorm(100)
 obj <- make_ci_class(x)
-output = calculate_CI(obj, 0.95)
+calculate_CI(obj, 0.95)
+calculate_CI(x, 0.95)
+```
+
+#### `make_ci_class()`
+- Description: change the class of object to ci_class.
+- Usage: `make_ci_class(x)`
+- Example:
+``` r
+library(SunanP2)
+set.seed(1234)
+x <- rnorm(100)
+obj <- make_ci_class(x)
+print(obj)
 ```
