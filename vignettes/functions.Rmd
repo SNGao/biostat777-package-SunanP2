@@ -135,6 +135,14 @@ if (!require("tidyverse", quietly = TRUE)) {
 if (!require("tidytuesdayR", quietly = TRUE)) {
     install.packages("tidytuesdayR", repos = "http://cran.us.r-project.org")
 }
+
+if (!require("here", quietly = TRUE)) {
+    install.packages("here", repos = "http://cran.us.r-project.org")
+}
+
+if (!require("ggplot2", quietly = TRUE)) {
+    install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+}
 ```
 
 
