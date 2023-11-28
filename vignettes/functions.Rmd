@@ -132,7 +132,7 @@ library(tidytuesdayR)
 library(here)
 
 ## Test if a directory named data exists locally. If it does not, write an R function that creates it programmatically. Saves the data only once
-if (!file.exists(here("data", "tuesdata_temperature.RDS"))) {
+if (!file.exists(here("data", "tuesdata_penguins.csv"))) {
     
     tuesdata <- tidytuesdayR::tt_load('2020-07-28')
     penguins <- tuesdata$penguins
@@ -143,11 +143,11 @@ if (!file.exists(here("data", "tuesdata_temperature.RDS"))) {
     }
     
     # save the files to RDS objects ()
-    saveRDS(tuesdata$penguins, file = here("data", "tuesdata_penguins.RDS"))
+    write.csv(tuesdata$penguins, file = here("data", "tuesdata_penguins.csv"))
 }
 
 ## Read in the data locally each time you knit/render
-penguins <- readRDS(here("data", "tuesdata_penguins.RDS"))
+penguins <- read.csv(here("data", "tuesdata_penguins.csv"))
 ```
 
 
