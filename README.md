@@ -18,8 +18,14 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools")
 }
 
-# Install SunanP2 from GitHub
-devtools::install_github("https://github.com/SNGao/biostat777-package-SunanP2")
+# Install SunanP2 from GitHub (contain vignettes)
+devtools::install_github("https://github.com/SNGao/biostat777-package-SunanP2", build_vignettes = TRUE)
+```
+
+### View vignettes in SunanP2
+``` r
+library(SunanP2)
+browseVignettes('SunanP2')
 ```
 
 ### Exported Functions

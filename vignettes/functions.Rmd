@@ -5,6 +5,7 @@ vignette: >
   %\VignetteIndexEntry{functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteBuilder: knitr
 ---
 
 ```{r, include = FALSE}
