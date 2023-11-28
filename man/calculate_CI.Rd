@@ -30,7 +30,6 @@ If the 1-α lower than 0 or larger than 1, the function will print warning to re
 }
 \examples{
 calculate_CI(c(1:10), 0.95)
-calculate_CI(c(1:10, 'String'), 0.95)
 
 library(SunanP2)
 set.seed(1234)

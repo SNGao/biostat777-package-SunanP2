@@ -25,7 +25,9 @@ If the input data contains NaN value, the function will print warning to remind.
 If the input data contains Non-numeric value, the function will print warning to remind.
 }
 \examples{
-calculate_CI(c(1:10), 0.95)
-calculate_CI(c(1:10, NaN), 0.95)
-calculate_CI(c(1:10, 'String'), 0.95)
+library(SunanP2)
+set.seed(1234)
+x <- rnorm(100)
+obj <- make_ci_class(x)
+print(obj)
 }
